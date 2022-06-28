@@ -11,6 +11,9 @@
 #Problem 1
 #Given the information below:
 
+from shutil import move
+
+
 x = [ [5,2,3], [10,8,9] ] 
 heros = [{'real_name':  'Bruce Wayne', 'hero_name' : 'Batman'}, {'real_name' : 'Tony Stark', 'hero_name' : 'Ironman'}]
 franchise = {
@@ -46,7 +49,7 @@ superheros = [
 #real_name - Diana Prince, hero_name - Wonder Woman
 
 for i in superheros:
-    print("{}, {}".format(i['real_name'], i['hero_name']))
+    print("real_name - {}, hero_name - {}".format(i['real_name'], i['hero_name']))
 
 #------------------------------------------------------------------
 #Problem 3
@@ -58,6 +61,12 @@ for i in superheros:
 #Barry Allan
 #Bruce Banner
 #Diana Prince
+
+def iterateDictionary2(key, lst):
+    for i in lst:
+        print(i[key])
+
+#iterateDictionary2('real_name', superheros)
 
 
 #-----------------------------------------------------------------
@@ -88,3 +97,8 @@ movie_collection = {
 #-Wall-E
 #-The Incredibles
 #-Inside Out
+
+for i in movie_collection.items():
+    print("{} {}".format(len(i[1]), i[0].upper()))
+    for j in i[1]:
+        print("- {}".format(j))
